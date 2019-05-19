@@ -1,8 +1,8 @@
 <?php
-//ให้ใส่ E-Mail หรือเบอร์โทรศัพท์ ของ Truemoney Wallet
-$twusername = "TrueWallet Username";
-//ให้ใส่รหัสผ่านหรือ PIN Code ของ Truemoney Wallet
-$twpassword = "TrueWallet Password";
+//ให้ใส่เบอร์โทรศัพท์ ของ Truemoney Wallet
+$twusername = "TrueWallet Tel";
+//ให้ใส่ PIN Code ของ Truemoney Wallet
+$twpassword = "TrueWallet PIN Code";
 //ให้ใส่ Reference Token, หาได้จากการรันไฟล์ inc/gettoken.php
 $twreference = "TrueWallet Reference";
 
