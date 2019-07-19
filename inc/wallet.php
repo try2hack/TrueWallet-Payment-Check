@@ -3,8 +3,8 @@ require_once("TrueWallet.class.php");
 include "config.php";
 
 //From truewallet.php, POST results.
-$ref = $_POST['wallet'];
-$member = $_POST['member'];
+$ref = strip_tags(trim($_POST["wallet"]));
+$member = strip_tags(trim($_POST["member"]));
 
 // Login with Access Token.
 $tw = new TrueWallet($twusername, $twpassword, $twreference); // Login Credentials + Reference Token
