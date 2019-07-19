@@ -2,16 +2,16 @@
 require_once("TrueWallet.class.php");
 include "config.php";
 
+//Connect to my database
+$mysqli = new mysqli($dbhost, $dbuser, $dbpassword, $dbname);
+
 //From truewallet.php, POST results.
-$ref = $_POST['wallet'];
-$member = $_POST['member'];
+$ref = mysqli_real_escape_string($mysqli,$_POST["wallet"]);
+$member = mysqli_real_escape_string($mysqli,$_POST["member"]);
 
 // Login with Access Token.
 $tw = new TrueWallet($twusername, $twpassword, $twreference); // Login Credentials + Reference Token
 $tw->Login();
-
-//Connect to my database
-$mysqli = new mysqli($dbhost, $dbuser, $dbpassword, $dbname);
 
 //Check TXIDs in database.
 $strSQL2 = "SELECT * FROM tw_transactions WHERE txn_id = '". $ref ."'";
